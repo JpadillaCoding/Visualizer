@@ -16,6 +16,22 @@ export default function BubbleSort() {
     return <p key={index}>{number}</p>;
   });
 
+  function bubbleAlgo(arr: Array<number>, n: number) {
+    let i: number, j: number, temp: number;
+    let swapped: boolean;
+    for (let i = 0; i < n - 1; i++) {
+      for (let j = 0; j < n - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+          swapped = true;
+        }
+      }
+      if ((swapped = false)) break;
+    }
+  }
+
   return (
     <div id="bubbleSort_parent_container">
       <div>{randomNums}</div>
