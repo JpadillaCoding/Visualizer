@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+html {
+  background-color: #1e1e1e;
+  font-family: Roboto;
+}
+.bars_uniform {
+  max-width: 45px;
+  min-width: 15px;
+  background: linear-gradient(
+    90deg,
+    hsla(163, 98%, 53%, 1) 0%,
+    hsla(178, 59%, 48%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(163, 98%, 53%, 1) 0%,
+    hsla(178, 59%, 48%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(163, 98%, 53%, 1) 0%,
+    hsla(178, 59%, 48%, 1) 100%
+  );
+}
+.horizontal_centering {
+  display: flex;
+  justify-content: center;
+}
+
+//#0FFDB9
