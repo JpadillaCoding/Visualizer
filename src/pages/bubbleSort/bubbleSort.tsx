@@ -51,7 +51,7 @@ export default function BubbleSort() {
         <button onClick={reset} className="button">
             Reset
         </button>
-        <button onClick={() => bubbleAlgo(items, 200)} className="button">
+        <button onClick={() => bubbleAlgo(items, 50)} className="button">
           Organize
         </button>
       </div>

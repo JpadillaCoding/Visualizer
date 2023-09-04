@@ -1,29 +1,38 @@
-@import '../../App.scss';
-.bubbleSort_container, .values_container, .button_container {
-    @extend .horizontal_centering;
+@import "../../App.scss";
+.bubbleSort_container,
+.values_container,
+.button_container {
+  @extend .horizontal_centering;
 }
 .bubbleSort_container {
-    flex-direction: column;
+  flex-direction: column;
 }
 .values_container {
-    flex-direction: row;
-    gap: 1%;
-    height: 400px;
-    color: #fff;
+  flex-direction: row;
+  gap: 1%;
+  height: 400px;
+  color: #fff;
 }
 .single_value_container {
-    align-self: flex-end;
-    text-align: center;
+  align-self: flex-end;
+  text-align: center;
+}
+.button_container {
+  gap: 5px;
 }
 .bars {
-    @extend .bars_uniform;
+  @extend .bars_uniform;
 }
 .button {
-    background-color: white;
-    color: black;
-    border: 2px solid #05386b;
-    border-radius: 20px;
-    padding: 10px;
-    cursor: pointer;
-    width: 80px;
+  background-color: #616161;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  width: 80px;
+}
+.button:hover {
+    transform: scale(1.1);
+    border: 1px solid #0FFDB9;
 }
