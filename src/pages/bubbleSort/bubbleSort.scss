@@ -1,13 +1,19 @@
+@import '../../App.scss';
+.bubbleSort_container, .values_container, .button_container {
+    @extend .horizontal_centering;
+}
+.bubbleSort_container {
+    flex-direction: column;
+}
 .values_container {
-    display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 5%;
-    height: 200px;
+    gap: 1%;
+    height: 400px;
 }
 .single_value_container {
     align-self: flex-end;
+    text-align: center;
 }
-.bar{
-    background-color: red;
+.bars {
+    @extend .bars_uniform;
 }

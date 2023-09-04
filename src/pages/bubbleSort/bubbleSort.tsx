@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import randomizer from "../../helpers/randomzier";
-import './bubbleSort.scss'
+import "./bubbleSort.scss";
 
 export default function BubbleSort() {
-  let [items, setItems] = useState(randomizer(100, 5));
+  let [items, setItems] = useState(randomizer(100, 40));
 
   async function bubbleAlgo(arr: Array<number>, timer: number) {
     let len = arr.length;
@@ -31,20 +31,24 @@ export default function BubbleSort() {
   }
 
   const renderedNums = items.map((number, index) => {
-    return(
-        <div className="single_value_container">
-            <div className="bar" style={{ height:`${number}px`}}></div>
-            <p key={index} className="value">{number}</p>
-        </div>
-    )
+    return (
+      <div className="single_value_container">
+        <div className="bars" style={{ height: `${number * 1.7}px` }}></div>
+        <p key={index} className="value">
+          {number}
+        </p>
+      </div>
+    );
   });
 
   return (
     <div className="bubbleSort_container">
       <div className="values_container">{renderedNums}</div>
-      <button onClick={() => bubbleAlgo(items, 500)}>
-        Click to organize
-      </button>
+      <div className="button_container">
+        <button onClick={() => bubbleAlgo(items, 200)} className="button">
+          Organize
+        </button>
+      </div>
     </div>
   );
 }
