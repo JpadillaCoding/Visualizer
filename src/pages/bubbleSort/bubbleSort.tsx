@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from "react";
+import randomizer from "../../helpers/randomzier";
 
 export default function BubbleSort() {
   let [items, setItems] = useState(randomizer(100, 5));
 
-  function randomizer(max: number, amount: number) {
-    const randomNums: Array<number> = [];
-    for (let i = 0; i < amount; i++) {
-      const num = Math.floor(Math.random() * max);
-      randomNums.push(num);
-    }
-    return randomNums;
-  }
-  console.log(items)
   function bubbleAlgo(arr: Array<number>, len: number) {
     let swapped: boolean = false; // check if there have been any swaps
     for (let i = 0; i < len; i++) { //outer loop to go through each index
@@ -33,6 +25,7 @@ export default function BubbleSort() {
   const renderedNums = items.map((number, index) => {
     return <p key={index}>{number}</p>;
   });
+  
   return (
     <div id="bubbleSort_parent_container">
       <div>{renderedNums}</div>
