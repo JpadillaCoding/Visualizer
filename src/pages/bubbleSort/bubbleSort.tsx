@@ -3,7 +3,7 @@ import randomizer from "../../helpers/randomzier";
 import "./bubbleSort.scss";
 
 export default function BubbleSort() {
-  let [items, setItems] = useState(randomizer(100, 40));
+  let [items, setItems] = useState(randomizer(100, 30));
 
   async function bubbleAlgo(arr: Array<number>, timer: number) {
     let len = arr.length;
@@ -29,6 +29,9 @@ export default function BubbleSort() {
       if (!swapped) break;
     }
   }
+  function reset() {
+    setItems(randomizer(100, 30))
+  }
 
   const renderedNums = items.map((number, index) => {
     return (
@@ -45,6 +48,9 @@ export default function BubbleSort() {
     <div className="bubbleSort_container">
       <div className="values_container">{renderedNums}</div>
       <div className="button_container">
+        <button onClick={reset} className="button">
+            Reset
+        </button>
         <button onClick={() => bubbleAlgo(items, 200)} className="button">
           Organize
         </button>

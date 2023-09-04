@@ -9,6 +9,7 @@
     flex-direction: row;
     gap: 1%;
     height: 400px;
+    color: #fff;
 }
 .single_value_container {
     align-self: flex-end;
@@ -16,4 +17,13 @@
 }
 .bars {
     @extend .bars_uniform;
+}
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #05386b;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    width: 80px;
 }
