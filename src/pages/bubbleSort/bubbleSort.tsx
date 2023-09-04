@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import randomizer from "../../helpers/randomzier";
+import './bubbleSort.scss'
 
 export default function BubbleSort() {
   let [items, setItems] = useState(randomizer(100, 5));
@@ -30,12 +31,17 @@ export default function BubbleSort() {
   }
 
   const renderedNums = items.map((number, index) => {
-    return <p key={index}>{number}</p>;
+    return(
+        <div className="single_value_container">
+            <div className="bar" style={{ height:`${number}px`}}></div>
+            <p key={index} className="value">{number}</p>
+        </div>
+    )
   });
 
   return (
-    <div id="bubbleSort_parent_container">
-      <div>{renderedNums}</div>
+    <div className="bubbleSort_container">
+      <div className="values_container">{renderedNums}</div>
       <button onClick={() => bubbleAlgo(items, 500)}>
         Click to organize
       </button>
