@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import valuesReducer from "../slices/graphValuesSlice";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    graphValues: valuesReducer,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

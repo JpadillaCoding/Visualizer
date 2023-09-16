@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.scss';
-import BubbleSort from './pages/bubbleSort/sorter';
+import GraphVisual from './pages/sorter/sorter';
+
+
 
 function App() {
   return (
     <div className="App">
-      <BubbleSort />
+      <GraphVisual />
     </div>
   );
 }

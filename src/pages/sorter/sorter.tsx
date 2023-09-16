@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import randomizer from "../../helpers/randomizer";
 import "./sorter.scss";
+import { RootState } from "../../app/store";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { setItems } from "../../slices/graphValuesSlice";
 
-export default function BubbleSort() {
-  let [items, setItems] = useState(randomizer(100, 30));
+
+export default function GraphVisual() {
+
+  const dispatch = useAppDispatch()
+  const graphValues = useAppSelector((state: RootState) => state.graphValues.values)
 
   async function bubbleAlgo(arr: Array<number>, timer: number) {
     let len = arr.length;
@@ -22,7 +28,7 @@ export default function BubbleSort() {
           swapped = true;
 
           await new Promise((resolve) => setTimeout(resolve, timer));
-          setItems([...arr]);
+          dispatch(setItems([...arr]))
         }
       }
 
@@ -33,7 +39,7 @@ export default function BubbleSort() {
     setItems(randomizer(100, 30))
   }
 
-  const renderedNums = items.map((number, index) => {
+  const renderedNums = graphValues.map((number:any, index:any) => {
     return (
       <div className="single_value_container">
         <div className="bars" style={{ height: `${number * 1.7}px` }}></div>
@@ -51,7 +57,7 @@ export default function BubbleSort() {
         <button onClick={reset} className="button">
             Reset
         </button>
-        <button onClick={() => bubbleAlgo(items, 50)} className="button">
+        <button onClick={() => bubbleAlgo(graphValues, 50)} className="button">
           Organize
         </button>
       </div>
