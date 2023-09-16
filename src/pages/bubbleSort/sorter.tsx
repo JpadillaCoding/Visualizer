@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import randomizer from "../../helpers/randomzier";
-import "./bubbleSort.scss";
+import randomizer from "../../helpers/randomizer";
+import "./sorter.scss";
 
 export default function BubbleSort() {
   let [items, setItems] = useState(randomizer(100, 30));
@@ -45,7 +45,7 @@ export default function BubbleSort() {
   });
 
   return (
-    <div className="bubbleSort_container">
+    <div className="sort_container">
       <div className="values_container">{renderedNums}</div>
       <div className="button_container">
         <button onClick={reset} className="button">

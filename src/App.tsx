@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import BubbleSort from './pages/bubbleSort/bubbleSort';
+import BubbleSort from './pages/bubbleSort/sorter';
 
 function App() {
   return (
