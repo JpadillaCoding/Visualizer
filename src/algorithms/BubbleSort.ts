@@ -1,4 +1,4 @@
-async function bubbleAlgo(arr: Array<number>, timer: number) {
+/* async function bubbleAlgo(arr: Array<number>, timer: number) {
     let len = arr.length;
     let swapped: boolean = false; // check if there have been any swaps
 
@@ -21,4 +21,5 @@ async function bubbleAlgo(arr: Array<number>, timer: number) {
 
       if (!swapped) break;
     }
-  }
+  } */
+  export {}
