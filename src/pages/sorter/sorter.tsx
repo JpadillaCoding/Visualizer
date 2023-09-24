@@ -3,6 +3,7 @@ import "./sorter.scss";
 import { RootState } from "../../app/store";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { setItems } from "../../slices/graphValuesSlice";
+import bubbleAlgo from "../../algorithms/BubbleSort";
 
 
 export default function GraphVisual() {
@@ -10,31 +11,6 @@ export default function GraphVisual() {
   const dispatch = useAppDispatch()
   const graphValues = useAppSelector((state: RootState) => state.graphValues.values)
 
-  async function bubbleAlgo(arr: Array<number>, timer: number) {
-    let mutableArr = [...arr]
-    let len = mutableArr.length;
-    let swapped: boolean = false; // check if there have been any swaps
-
-    for (let i = 0; i < len; i++) {
-      swapped = false; //outer loop to go through each index
-
-      for (let j = 0; j < len; j++) {
-        if (mutableArr[j] > mutableArr[j + 1]) {
-          //inner loop used for comparison and moving items to sort
-          let temp = mutableArr[j];
-          mutableArr[j] = mutableArr[j + 1];
-          mutableArr[j + 1] = temp;
-
-          swapped = true;
-
-          await new Promise((resolve) => setTimeout(resolve, timer));
-          dispatch(setItems([...mutableArr]))
-        }
-      }
-
-      if (!swapped) break;
-    }
-  }
   function reset() {
     dispatch(setItems(randomizer(100, 30)))
   }
@@ -57,7 +33,7 @@ export default function GraphVisual() {
         <button onClick={reset} className="button">
             Reset
         </button>
-        <button onClick={() => bubbleAlgo(graphValues, 50)} className="button">
+        <button onClick={() => bubbleAlgo(graphValues, 50, dispatch)} className="button">
           Organize
         </button>
       </div>

@@ -1,6 +1,6 @@
 import { setItems } from "../slices/graphValuesSlice";
 
-export default async function bubbleAlgo(stateValues: Array<number>, timer: number) {
+export default async function bubbleAlgo(stateValues: Array<number>, timer: number, dispatch:any) {
   let mutableValues = [...stateValues]
   let len = mutableValues.length;
   let valuesSwappedCheck: boolean = false; // check if there have been any swaps
@@ -18,7 +18,7 @@ export default async function bubbleAlgo(stateValues: Array<number>, timer: numb
         valuesSwappedCheck = true;
 
         await new Promise((resolve) => setTimeout(resolve, timer));
-        setItems([...mutableValues]);
+        dispatch(setItems([...mutableValues]));
       }
     }
 
