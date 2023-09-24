@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import randomizer from "../../helpers/randomizer";
 import "./sorter.scss";
 import { RootState } from "../../app/store";
@@ -39,11 +38,11 @@ export default function GraphVisual() {
     setItems(randomizer(100, 30))
   }
 
-  const renderedNums = graphValues.map((number:any, index:any) => {
+  const renderedNums = graphValues.map((number:number, index:number) => {
     return (
-      <div className="single_value_container">
+      <div className="single_value_container" key={index}>
         <div className="bars" style={{ height: `${number * 1.7}px` }}></div>
-        <p key={index} className="value">
+        <p className="value">
           {number}
         </p>
       </div>

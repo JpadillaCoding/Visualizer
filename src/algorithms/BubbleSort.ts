@@ -1,25 +1,26 @@
-/* async function bubbleAlgo(arr: Array<number>, timer: number) {
-    let len = arr.length;
-    let swapped: boolean = false; // check if there have been any swaps
+import { setItems } from "../slices/graphValuesSlice";
 
-    for (let i = 0; i < len; i++) {
-      swapped = false; //outer loop to go through each index
+export default async function bubbleAlgo(valuesArray: Array<number>, timer: number) {
+  let len = valuesArray.length;
+  let valuesSwappedCheck: boolean = false; // check if there have been any swaps
 
-      for (let j = 0; j < len; j++) {
-        if (arr[j] > arr[j + 1]) {
-          //inner loop used for comparison and moving items to sort
-          let temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
+  for (let indexTracker = 0; indexTracker < len; indexTracker++) {
+    valuesSwappedCheck = false; //outer loop to go through each index
 
-          swapped = true;
+    for (let valueComparison = 0; valueComparison < len; valueComparison++) {
+      if (valuesArray[valueComparison] > valuesArray[valueComparison + 1]) {
+        //inner loop used for comparison and moving items to sort
+        let temp = valuesArray[valueComparison];
+        valuesArray[valueComparison] = valuesArray[valueComparison + 1];
+        valuesArray[valueComparison + 1] = temp;
 
-          await new Promise((resolve) => setTimeout(resolve, timer));
-          setItems([...arr]);
-        }
+        valuesSwappedCheck = true;
+
+        await new Promise((resolve) => setTimeout(resolve, timer));
+        setItems([...valuesArray]);
       }
-
-      if (!swapped) break;
     }
-  } */
-  export {}
+
+    if (!valuesSwappedCheck) break;
+  }
+}
