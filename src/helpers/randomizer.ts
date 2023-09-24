@@ -7,4 +7,4 @@ function randomizer(max: number, amount: number) {
     return randomNums;
   }
 
-  export default randomizer
+export default randomizer

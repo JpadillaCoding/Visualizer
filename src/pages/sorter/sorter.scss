@@ -1,10 +1,10 @@
 @import "../../App.scss";
-.bubbleSort_container,
+.sort_container,
 .values_container,
 .button_container {
   @extend .horizontal_centering;
 }
-.bubbleSort_container {
+.sort_container {
   flex-direction: column;
 }
 .values_container {
