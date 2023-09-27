@@ -1,4 +1,4 @@
-@import "../../App.scss";
+@import "../App.scss";
 .sort_container,
 .values_container,
 .button_container {
@@ -23,16 +23,9 @@
 .bars {
   @extend .bars_uniform;
 }
-.button {
-  background-color: #616161;
-  color: #fff;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 10px;
-  cursor: pointer;
-  width: 80px;
+.sorter_button {
+  @extend .global_button;
 }
-.button:hover {
-    transform: scale(1.1);
-    border: 1px solid #0FFDB9;
+.sorter_button:hover {
+  @extend .global_button, :hover
 }
