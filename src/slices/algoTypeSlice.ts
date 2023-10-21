@@ -18,3 +18,7 @@ export const algoTypeSlice = createSlice({
     },
   },
 });
+
+export const { setItems } = algoTypeSlice.actions
+
+export default algoTypeSlice.reducer

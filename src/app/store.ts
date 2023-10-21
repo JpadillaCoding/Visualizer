@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import valuesReducer from "../slices/graphValuesSlice";
+import algoReducer from "../slices/algoTypeSlice";
 
 const store = configureStore({
   reducer: {
     graphValues: valuesReducer,
+    algoType: algoReducer,
   },
 });
 

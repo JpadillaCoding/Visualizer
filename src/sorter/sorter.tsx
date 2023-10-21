@@ -5,13 +5,16 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { setItems } from "../slices/graphValuesSlice";
 import bubbleAlgo from "../algorithms/BubbleSort";
 import AlgoButtons from "../components/AlgoButtons";
+import { stat } from "fs";
 
 export default function GraphVisual() {
   const dispatch = useAppDispatch();
   const graphValues = useAppSelector(
     (state: RootState) => state.graphValues.values
   );
-
+  const algoType = useAppSelector(
+    (state: RootState) => state.algoType.value           
+  );
   function reset() {
     dispatch(setItems(randomizer(100, 30)));
   }
@@ -33,7 +36,7 @@ export default function GraphVisual() {
           Reset
         </button>
         <button
-          onClick={() => bubbleAlgo(graphValues, 50, dispatch)}
+          onClick={() => algoType(graphValues, 50, dispatch)}
           className="sorter_button"
         >
           Organize
