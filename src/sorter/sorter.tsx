@@ -28,18 +28,18 @@ export default function GraphVisual() {
   return (
     <div className="sort_container">
       <div className="values_container">{renderedNums}</div>
-      <div className="button_container">
+      <div className="sorter_button_container">
         <button onClick={reset} className="sorter_button">
           Reset
         </button>
         <button
           onClick={() => bubbleAlgo(graphValues, 50, dispatch)}
-          className="button"
+          className="sorter_button"
         >
           Organize
         </button>
-        <AlgoButtons />
       </div>
+      <AlgoButtons />
     </div>
   );
 }
