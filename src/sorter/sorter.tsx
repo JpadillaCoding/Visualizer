@@ -3,9 +3,7 @@ import "./sorter.scss";
 import { RootState } from "../app/store";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { setItems } from "../slices/graphValuesSlice";
-import bubbleAlgo from "../algorithms/BubbleSort";
 import AlgoButtons from "../components/AlgoButtons";
-import { stat } from "fs";
 
 export default function GraphVisual() {
   const dispatch = useAppDispatch();
@@ -15,6 +13,9 @@ export default function GraphVisual() {
   const algoType = useAppSelector(
     (state: RootState) => state.algoType.value           
   );
+  const algoName = useAppSelector(
+    (state: RootState) => state.algoType.algoName
+  )
   function reset() {
     dispatch(setItems(randomizer(100, 30)));
   }
@@ -30,6 +31,7 @@ export default function GraphVisual() {
 
   return (
     <div className="sort_container">
+      <h1>{algoName}</h1>
       <div className="values_container">{renderedNums}</div>
       <div className="sorter_button_container">
         <button onClick={reset} className="sorter_button">

@@ -6,13 +6,13 @@ import "./AlgoButtons.scss";
 export default function AlgoButtons() {
   const dispatch = useAppDispatch();
 
-  function setAlgoType(algoType: Function) {
-    dispatch(setItem(algoType));
+  function setAlgoType(algoType: Function, algoName: String) {
+    dispatch(setItem({function: algoType, algoName: algoName}));
   }
 
   return (
     <div className="algo_buttons_container">
-      <button className="algo_button" onClick={() => setAlgoType(bubbleAlgo)}>
+      <button className="algo_button" onClick={() => setAlgoType(bubbleAlgo, "Bubble Sort")}>
         Bubble Sort
       </button>
     </div>
