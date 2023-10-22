@@ -6,8 +6,8 @@ import "./AlgoButtons.scss";
 export default function AlgoButtons() {
   const dispatch = useAppDispatch();
 
-  function setAlgoType(algoType: Function, algoName: String) {
-    dispatch(setItem({function: algoType, algoName: algoName}));
+  function setAlgoType(algoFunction: Function, algoName: String) {
+    dispatch(setItem({function: algoFunction, algoName: algoName}));
   }
 
   return (

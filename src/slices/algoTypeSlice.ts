@@ -6,12 +6,12 @@ function sortNumbers(a: any, b: any) {
 }
 //default state of nothing working until a algo type is picked
 interface AlgoTypeState {
-  value: Function;
+  algoFunction: Function;
   algoName: String;
 }
 
 const initialState: AlgoTypeState = {
-  value: sortNumbers,
+  algoFunction: sortNumbers,
   algoName: "Default",
 };
 
@@ -19,8 +19,8 @@ export const algoTypeSlice = createSlice({
   name: "algoType",
   initialState,
   reducers: {
-    setItem: (state:any, action) => {
-      state.value = action.payload.function;
+    setItem: (state: any, action) => {
+      state.algoFunction = action.payload.function;
       state.algoName = action.payload.algoName;
     },
   },

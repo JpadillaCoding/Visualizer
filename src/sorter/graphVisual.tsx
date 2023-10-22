@@ -11,7 +11,7 @@ export default function GraphVisual() {
     (state: RootState) => state.graphValues.values
   );
   const algoType = useAppSelector(
-    (state: RootState) => state.algoType.value           
+    (state: RootState) => state.algoType.algoFunction          
   );
   const algoName = useAppSelector(
     (state: RootState) => state.algoType.algoName
