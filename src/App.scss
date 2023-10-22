@@ -30,4 +30,16 @@ html {
   justify-content: center;
 }
 
-//#0FFDB9
+.global_button {
+  background-color: #616161;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  width: 80px;
+}
+.global_button:hover {
+  transform: scale(1.1);
+  border: 1px solid #0FFDB9;
+}

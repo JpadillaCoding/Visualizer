@@ -1,8 +1,6 @@
-import React from 'react';
-import './App.scss';
-import GraphVisual from './pages/sorter/sorter';
-
-
+import React from "react";
+import "./App.scss";
+import GraphVisual from "./sorter/graphVisual";
 
 function App() {
   return (
