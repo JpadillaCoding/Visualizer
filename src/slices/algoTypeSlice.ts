@@ -12,7 +12,7 @@ interface AlgoTypeState {
 
 const initialState: AlgoTypeState = {
   algoFunction: sortNumbers,
-  algoName: "Default",
+  algoName: "Choose An Algorithm!",
 };
 
 export const algoTypeSlice = createSlice({

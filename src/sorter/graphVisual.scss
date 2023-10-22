@@ -1,8 +1,14 @@
 @import "../App.scss";
 .sort_container,
 .values_container,
-.sorter_button_container {
+.sorter_button_container,
+.algorithm_name,
+.sorter_action_buttons {
   @extend .horizontal_centering;
+}
+.algorithm_name {
+  color: white;
+  font-size: 2em;
 }
 .sort_container {
   flex-direction: column;
@@ -10,15 +16,19 @@
 .values_container {
   flex-direction: row;
   gap: 1%;
-  height: 400px;
+  height: 300px;
   color: #fff;
 }
 .single_value_container {
   align-self: flex-end;
   text-align: center;
 }
-.button_container {
-  gap: 5px;
+.sorter_action_buttons {
+  gap: 10px;
+}
+.sorter_button_container {
+  flex-direction: column;
+  gap: 10px;
 }
 .bars {
   @extend .bars_uniform;

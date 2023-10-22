@@ -5,4 +5,6 @@
 }
 .algo_buttons_container {
     @extend .horizontal_centering;
+    gap: 7px;
+    flex-wrap: wrap;
 }
